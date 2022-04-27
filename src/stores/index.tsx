@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { createContext, useContext } from "react";
-import { useCounter } from "./useCounter";
+import { ReactNode } from 'react';
+import { createContext, useContext } from 'react';
+import { useCounter } from './useCounter';
 
 interface IProps {
   children: ReactNode;
