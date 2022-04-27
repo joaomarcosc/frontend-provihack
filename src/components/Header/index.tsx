@@ -9,6 +9,7 @@ export function Header() {
 
   return (
     <Container>
+      <h1>Boilerplate</h1>
       <Button onClick={decrement}>Decrementar</Button>
       {count}
       <Button onClick={increment}>Incrementar</Button>
