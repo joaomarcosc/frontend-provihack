@@ -11,7 +11,7 @@ export function Header() {
     <Container>
       <Button onClick={decrement}>Decrementar</Button>
       {count}
-      <Button onClick={increment}>Decrementar</Button>
+      <Button onClick={increment}>Incrementar</Button>
     </Container>
   );
 }
