@@ -11,7 +11,7 @@ export const Container = styled.section`
   justify-content: center;
   width: fit-content;
   border-radius: 12px;
-  padding: 8px 20px;
+  padding: 15px 20px;
   box-shadow: 0px 4px 15px rgba(13, 38, 1, 0.13);
   border-radius: 12px;
 `;
@@ -36,10 +36,10 @@ export const CustomInput = styled.input<IInput>`
 `;
 
 export const Icon = styled.p`
-  font-size: 16px;
+  font-size: 19px;
   color: #999999;
   margin: 0;
   position: absolute;
   top: 0;
-  transform: translateY(40%);
+  transform: translateY(50%);
 `;
