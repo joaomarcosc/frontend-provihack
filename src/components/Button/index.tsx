@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes } from "react";
-import { Container } from "./styles";
+import { ButtonHTMLAttributes } from 'react';
+import { Container } from './styles';
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
