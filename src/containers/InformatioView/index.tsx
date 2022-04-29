@@ -13,7 +13,7 @@ export function InformationView() {
       <div className={css.infoEstab}>
         <img
           className={css.logoImg}
-          src="https://www.esfera.com.vc/ccstore/v1/images/?source=/file/v3848543048111582327/products/img_partner_discount_natura.jpg&height=475&width=475"
+          src={`https://www.esfera.com.vc/ccstore/v1/images/?source=/file/v3848543048111582327/products/img_partner_discount_natura.jpg&height=475&width=475`}
         />
         <section className={css.line} />
         <Info
