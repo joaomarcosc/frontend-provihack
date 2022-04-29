@@ -8,7 +8,6 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input(props: IProps) {
   const { icon } = props;
-
   return (
     <section className={css.inputWrapper}>
       <p className={css.icon}>{icon}</p>

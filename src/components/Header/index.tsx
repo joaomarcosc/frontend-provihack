@@ -1,6 +1,7 @@
 import { useStores } from 'stores';
 import { ReactComponent as SearchSvg } from '../../assets/icons/search-icon.svg';
 import { Input } from 'components/Input';
+import { CardRecycle } from 'components/CardRecycle';
 
 export function Header() {
   const {
@@ -14,6 +15,7 @@ export function Header() {
       <button onClick={decrement}>Decrementar</button>
       {count}
       <button onClick={increment}>Incrementar</button>
+      <CardRecycle icon={<SearchSvg />} title="topper" description="foi?" />
     </section>
   );
 }
