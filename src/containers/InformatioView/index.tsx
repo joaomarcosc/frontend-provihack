@@ -1,6 +1,6 @@
 import css from './styles.module.scss';
 import { ReactComponent as BackSvg } from '../../assets/icons/back-icon.svg';
-import { Info } from 'components/infomartion';
+import { Info } from 'components/Infomartion';
 
 export function InformationView() {
   return (
