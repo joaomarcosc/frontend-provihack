@@ -1,6 +1,4 @@
-import { Button } from 'components/Button';
 import { useStores } from 'stores';
-import { Container } from './styles';
 import { ReactComponent as SearchSvg } from '../../assets/icons/search-icon.svg';
 import { Input } from 'components/Input';
 
@@ -10,12 +8,12 @@ export function Header() {
   } = useStores();
 
   return (
-    <Container>
+    <section>
       <Input icon={<SearchSvg />} placeholder="Pesquisar material" />
       <h1>Boilerplate</h1>
-      <Button onClick={decrement}>Decrementar</Button>
+      <button onClick={decrement}>Decrementar</button>
       {count}
-      <Button onClick={increment}>Incrementar</Button>
-    </Container>
+      <button onClick={increment}>Incrementar</button>
+    </section>
   );
 }

@@ -1,11 +1,4 @@
-import { ReactNode } from 'react';
-import styled from 'styled-components';
-
-interface IInput {
-  icon?: ReactNode;
-}
-
-export const Container = styled.section`
+.inputWrapper {
   position: relative;
   align-items: center;
   justify-content: center;
@@ -14,9 +7,9 @@ export const Container = styled.section`
   padding: 15px 20px;
   box-shadow: 0px 4px 15px rgba(13, 38, 1, 0.13);
   border-radius: 12px;
-`;
+}
 
-export const CustomInput = styled.input<IInput>`
+.input {
   border: none;
   border-radius: 12px;
   outline: none;
@@ -27,19 +20,18 @@ export const CustomInput = styled.input<IInput>`
   &::placeholder {
     color: #999999;
   }
+}
 
-  ${(props) =>
-    props.icon &&
-    `
-    padding-left: 26px
-  `}
-`;
+.hasIcon {
+  padding-left: 26px
+}
 
-export const Icon = styled.p`
+.icon {
   font-size: 19px;
   color: #999999;
   margin: 0;
   position: absolute;
   top: 0;
-  transform: translateY(50%);
-`;
+  transform: translateY(57%);
+}
+
