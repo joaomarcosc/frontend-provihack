@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from 'react';
-import { Container, CustomInput, Icon } from './styles';
+import cln from 'classnames';
+import css from './styles.module.scss';
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;
@@ -9,9 +10,13 @@ export function Input(props: IProps) {
   const { icon } = props;
 
   return (
-    <Container>
-      <Icon>{icon}</Icon>
-      <CustomInput icon={icon} {...props} />
-    </Container>
+    <section className={css.inputWrapper}>
+      <p className={css.icon}>{icon}</p>
+      <input
+        className={cln(css.input, { [css.hasIcon]: icon })}
+        icon={icon}
+        {...props}
+      />
+    </section>
   );
 }
