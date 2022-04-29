@@ -1,5 +1,5 @@
 import css from './styles.module.scss';
-import { InputHTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
 interface IProps {
   icon: ReactNode;
