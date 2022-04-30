@@ -1,0 +1,102 @@
+@import "../../assets/styles/variables";
+
+.apresentationWrapper {
+  position: relative;
+  height: 100vh;
+  padding: 151px 30px;
+  background-color: $default-green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  @media(min-width: $tablet) {
+    max-width: 500px;
+  }
+}
+
+.topRight, .leftCenter, .topBottom {
+  position: absolute;
+  font-size: 227px;
+}
+
+.topRight {
+  top: -116px;
+  right: -114px;
+}
+
+.topBottom {
+  bottom: -75px;
+  right: -50px;
+  font-size: 174px;
+}
+
+.leftCenter {
+  left: -147px;
+  top: 40%;
+  display: none;
+  @media(min-height: 840px) {
+    display: block;
+  }
+}
+
+.presentationTitle {
+  margin-top: 20px;
+  font-size: 40px;
+  color: $color-white;
+  font-weight: 600;
+}
+
+.presentationDescription {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.secondaryTitle {
+  font-size: 30px;
+  color: $color-white;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid $color-white;
+  background: none;
+  font-size: 20px;
+  color: $color-white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondStep {
+  padding: 30px
+}
+
+.secondStepSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backToFirstStep {
+  align-self: baseline;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &>svg {
+    transform: rotate(-180deg);
+    font-size: 20px
+  }
+}
