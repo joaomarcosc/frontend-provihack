@@ -1,21 +1,71 @@
-import { InputHTMLAttributes, ReactNode } from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react';
 import cln from 'classnames';
-import css from './styles.module.scss';
 
-interface IProps extends InputHTMLAttributes<HTMLInputElement> {
-  icon?: ReactNode;
+import style from './styles.module.scss';
+
+interface IDropdown {
+  value: string;
+  name: string;
 }
 
-export function Input(props: IProps) {
-  const { icon } = props;
+export interface IProps extends InputHTMLAttributes<HTMLInputElement> {
+  icon?: React.ReactNode;
+  position?: 'left' | 'right';
+  inputSize?: 'small' | 'medium' | 'large';
+  fullwidth?: boolean;
+  label?: string;
+  dropdownItems?: IDropdown[];
+}
+
+const Input = forwardRef<HTMLInputElement, IProps>((props: IProps, ref) => {
+  const {
+    placeholder,
+    type,
+    name,
+    label,
+    className,
+    inputSize,
+    icon,
+    fullwidth,
+    onClick,
+    onChange,
+    value,
+    required,
+    readOnly,
+    disabled
+  } = props;
+
+  const classNamesList = [
+    style.input,
+    { [style.fullWidth]: fullwidth },
+    className
+  ];
+
   return (
-    <section className={css.inputWrapper}>
-      <p className={css.icon}>{icon}</p>
-      <input
-        className={cln(css.input, { [css.hasIcon]: icon })}
-        icon={icon}
-        {...props}
-      />
+    <section className={cln(classNamesList)}>
+      <label htmlFor={name} className={style.label}>
+        {label}
+      </label>
+      <div className={cln({ [style.icon]: icon })}>
+        <div>{icon}</div>
+        <input
+          id={name}
+          value={value}
+          placeholder={placeholder}
+          type={type}
+          ref={ref}
+          onClick={onClick}
+          onChange={onChange}
+          className={cln(style[inputSize ?? 'medium'])}
+          required={required}
+          readOnly={readOnly}
+          disabled={disabled}
+        />
+      </div>
     </section>
   );
-}
+});
+
+Input.displayName = 'Input';
+
+export default Input;
