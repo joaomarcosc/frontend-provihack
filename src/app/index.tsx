@@ -1,9 +1,11 @@
-import { HelpPage } from 'containers/HelpPage';
+import { Routes } from './routes';
+import '../assets/styles/global.scss';
 
 function App() {
   return (
-    <div className="App">
-      <HelpPage />
+    <div>
+      <Routes />
+>>>>>>> main
     </div>
   );
 }
