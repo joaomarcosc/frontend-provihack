@@ -2,7 +2,7 @@ import css from './styles.module.scss';
 import { ReactComponent as BackSvg } from '../../assets/icons/back-icon.svg';
 import { Info } from 'components/Infomartion';
 
-export function InformationView() {
+export default function InformationView() {
   return (
     <section>
       <div className={css.header}>
