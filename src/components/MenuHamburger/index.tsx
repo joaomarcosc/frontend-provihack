@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
 import cln from 'classnames';
 import css from './styles.module.scss';
