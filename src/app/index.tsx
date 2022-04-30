@@ -1,9 +1,10 @@
-import { Home } from '../containers/Home';
+import { Routes } from './routes';
+import '../assets/styles/global.scss';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
+    <div>
+      <Routes />
     </div>
   );
 }
