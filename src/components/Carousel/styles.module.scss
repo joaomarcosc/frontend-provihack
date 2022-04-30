@@ -1,0 +1,42 @@
+
+@import "../../assets/styles/variables";
+
+.carouselWrapper {
+  width: 100%
+}
+
+.description {
+  color: $color-white;
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+.bottomBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  &>button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(13, 38, 1, 0.6);;
+  }
+
+  &>button:not(:last-child) {
+    margin-right: 9px;
+  }
+
+  &>.active {
+    background: $color-white;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
