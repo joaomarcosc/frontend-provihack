@@ -35,3 +35,21 @@
 .border{
     border: 1px solid #0D2601;
 }
+.buttonCancelar{
+
+    color:  #0D2601;
+    border: 1px solid #0D2601;
+    border-radius:  12px;
+}
+.buttonSalvar{
+    background-color: #0D2601;
+    color:  white;
+    gap: 10px;
+    border: none;
+}
+.containerBtn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    align-content: flex-end;    
+}

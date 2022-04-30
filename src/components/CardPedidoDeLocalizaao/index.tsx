@@ -20,6 +20,10 @@ export function CardPedidoDeLocalizaao() {
             <Input className={css.campoInput} placeholder="Sergipe" />
           </div>
         </div>
+        <div className={css.containerBtn}>
+          <Button nome="Cancelar" className={css.buttonCancelar} />
+          <Button nome="Salvar" className={css.buttonSalvar} />
+        </div>
       </div>
     </div>
   );
