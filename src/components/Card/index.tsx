@@ -7,11 +7,11 @@ interface IProps {
   description: string;
 }
 
-export function CardRecycle({ icon, title, description }: IProps) {
+export function Card({ icon, title, description }: IProps) {
   return (
     <section className={css.cardRecycleWrapper}>
-      <div>{icon}</div>
-      <div>
+      <div className={css.icon}>{icon}</div>
+      <div className={css.infosCard}>
         <h3>{title}</h3>
         <div className={css.descriptionWithLogo}>
           <p>{description}</p>

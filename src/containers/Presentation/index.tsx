@@ -5,11 +5,13 @@ import { ReactComponent as EarthSvg } from 'assets/icons/earth-icon.svg';
 import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
 import { Carousel } from 'components/Carousel';
 import { carouselListInfo } from './carouseListInfo';
+import { Modal } from 'components/Modal';
 import css from './styles.module.scss';
 import cln from 'classnames';
 
 export default function Presentation() {
   const [step, setStep] = useState<number>(1);
+  const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 
   return (
@@ -55,6 +57,10 @@ export default function Presentation() {
           </section>
         </section>
       )}
+
+      <Modal open={open} setOpen={setOpen}>
+        <p>opa</p>
+      </Modal>
     </section>
   );
 }
