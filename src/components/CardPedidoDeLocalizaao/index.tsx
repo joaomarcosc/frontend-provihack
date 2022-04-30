@@ -1,5 +1,6 @@
 import css from './syles.module.scss';
 import { Input } from 'components/Input';
+import { Button } from 'components/Button';
 
 export function CardPedidoDeLocalizaao() {
   return (
