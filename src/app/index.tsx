@@ -1,9 +1,9 @@
-import { InformationView } from 'containers/InformatioView';
+import { HelpPage } from 'containers/HelpPage';
 
 function App() {
   return (
     <div className="App">
-      <InformationView />
+      <HelpPage />
     </div>
   );
 }
