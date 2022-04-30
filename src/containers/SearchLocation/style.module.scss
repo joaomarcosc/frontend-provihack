@@ -1,0 +1,10 @@
+.apresentationWrapper {
+    position: relative;
+    height: 100vh;
+    padding: 151px 30px;
+    background-color: $default-green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
