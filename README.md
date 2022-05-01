@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Eu reciclo !
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introdução
 
-## Available Scripts
+Eu Reciclo é uma vitrine de informação que funciona como conexão entre o cidadão e os estabelecimentos de reciclagem.
+Quando você entrar na plataforma, já terá acesso às categorias de recicláveis mais comuns. Clicando neles, você poderá selecionar seu estado e cidade e localizar o estabelecimento mais próximo para assim realizar o descarte do seu lixo.
+Além disso, somos uma plataforma para divulgação das ações sociais das empresas.
 
-In the project directory, you can run:
+### Objetivo do projeto
 
-### `npm start`
+Democratizar o acesso à informação sobre reciclagem em cada cidade do Brasil.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Glossário
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+(Colocar termos técnicos necessários para o entendimento da aplicação, se houver)
 
-### `npm test`
+### Atores
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Usuário : refere-se ao público externo.
 
-### `npm run build`
+## Requisitos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Conexão com internet
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Browser (navegador de rede)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### **Usuário**
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Usuário consultar, sugerir ou cadastrar uma empresa para coleta dos materiais.
