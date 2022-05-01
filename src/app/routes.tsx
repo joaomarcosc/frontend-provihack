@@ -18,7 +18,7 @@ export function Routes() {
           <Route path="tipos-de-materiais" element={<RecycleTypes />} />
           <Route path="submeter-sugestao" element={<SuggestionForm />} />
           <Route path="informacao" element={<InformationView />} />
-          <Route path="companies" element={<Companies />} />
+          <Route path=":name" element={<Companies />} />
         </Route>
       </RouteContainer>
     </React.Suspense>

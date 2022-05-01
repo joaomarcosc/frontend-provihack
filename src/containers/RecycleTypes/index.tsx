@@ -4,17 +4,18 @@ import { ReactComponent as RecycleIcon } from 'assets/icons/recycle-icon.svg';
 import { ReactComponent as InfoIcon } from 'assets/icons/info-icon.svg';
 import { ReactComponent as FloaterIcon } from 'assets/icons/floater-icon.svg';
 import { ReactComponent as SearchSvg } from 'assets/icons/search-icon.svg';
-import { recycleTypes } from 'helper/utils';
-
+import { recycleTypes, removeSpecialCharAndLowerCase } from 'helper/utils';
 import css from './styles.module.scss';
 import Input from 'components/Input';
 import { Card } from 'components/Card';
 import { MenuHamburger } from 'components/MenuHamburger';
+import { useNavigate } from 'react-router-dom';
 
 export default function RecycleTypes() {
   const [recycle, setRecycle] = useState(recycleTypes);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
+  const navigate = useNavigate();
 
   const optionsMenuBar = [
     { icon: <InfoIcon />, title: 'Sobre nós' },
@@ -22,16 +23,9 @@ export default function RecycleTypes() {
   ];
   useEffect(() => {
     const newValue = recycle.filter((item) =>
-      item.title
-        .toLocaleLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .includes(
-          value
-            .toLocaleLowerCase()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-        )
+      removeSpecialCharAndLowerCase(item.title).includes(
+        removeSpecialCharAndLowerCase(value)
+      )
     );
 
     if (value === '') {
@@ -57,7 +51,7 @@ export default function RecycleTypes() {
         <Input
           placeholder="Pesquisar material"
           icon={<SearchSvg />}
-          fullwidth
+          fullwidth="true"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -69,6 +63,11 @@ export default function RecycleTypes() {
               icon={item.icon}
               title={item.title}
               description={item.description}
+              onClick={() =>
+                navigate(`/${removeSpecialCharAndLowerCase(item.title)}`, {
+                  state: item.title
+                })
+              }
             />
           ))}
         </div>
