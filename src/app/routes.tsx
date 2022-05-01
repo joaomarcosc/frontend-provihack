@@ -8,6 +8,7 @@ const HelpPage = React.lazy(() => import('../containers/HelpPage'));
 const InformationView = React.lazy(
   () => import('../containers/InformationView')
 );
+const AboutUs = React.lazy(() => import('../containers/AboutUs'));
 
 export function Routes() {
   return (

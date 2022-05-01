@@ -17,34 +17,13 @@
   border-radius: 12px;
   align-self: center;
   margin-bottom: 25px;
-}
-
-.iconHeader {
- font-size: 2em;
- color: #000000;
- margin: 0;
- top: 0;
-}
-
-.header{
- display: flex;
- align-items: center;
- box-shadow: 0px 4px 15px rgba(13, 38, 1, 0.13);
- border-radius: 0 0 12px 12px ;
- background-color: #f7f7f7;
-}
-
-.title{
- font-size: 17px;
-}
-
-.menuText{
- margin-left: 3%;
-}
-
-.searchBar{
- display: flex;
- margin: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &>svg{
+   color: $color-dark-green;
+   font-size: 100px;
+  }
 }
 
 .infoEstab{
@@ -58,6 +37,11 @@
  width: 100%;
  background-color: $color-60-green;
 }
+
+
+
+
+
 
 
 

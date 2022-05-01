@@ -57,7 +57,7 @@ export default function RecycleTypes() {
         <Input
           placeholder="Pesquisar material"
           icon={<SearchSvg />}
-          fullwidth
+          fullwidth="true"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />

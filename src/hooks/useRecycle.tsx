@@ -1,4 +1,5 @@
 import {
+  getCompanyById,
   getCompanyByName,
   getRecycleTypes,
   postFormSuggestion,
@@ -8,6 +9,12 @@ import { useMutation, useQuery } from 'react-query';
 
 export function useRecycle() {
   const query = useQuery('recycle', getRecycleTypes);
+
+  return query;
+}
+
+export function useCompanyById(id: string) {
+  const query = useQuery(['companyById', id], () => getCompanyById(id));
 
   return query;
 }
