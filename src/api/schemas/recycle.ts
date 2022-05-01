@@ -7,6 +7,24 @@ export interface IGetRecycleResponse {
   data: IRecycle[];
 }
 
+export interface IGetEstablishment {
+  id: string;
+  name: string;
+  state: string;
+  city: string;
+  adress: string;
+  cep: string;
+  tel: string;
+  workingTime: string;
+  discart: string[];
+  howToDiscart: string;
+  howDoesDiscart: string;
+}
+
+export interface IGetEstablishmentResponse {
+  data: IGetEstablishment;
+}
+
 export interface IGetDiscard {
   nameEstablishment: string;
   tel: string;

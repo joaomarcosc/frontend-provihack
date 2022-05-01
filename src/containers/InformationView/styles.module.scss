@@ -18,6 +18,13 @@
   border-radius: 12px;
   align-self: center;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &>svg{
+   color: $color-dark-green;
+   font-size: 100px;
+  }
 }
 
 .infoEstab{
