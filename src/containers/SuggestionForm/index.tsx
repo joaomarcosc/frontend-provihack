@@ -48,6 +48,7 @@ export default function SuggestionForm() {
             placeholder="Ex: nome do responsável aqui"
             fullwidth
           />
+
           <Input
             label="Email: *"
             placeholder="Ex: seuemail@dominio.com"

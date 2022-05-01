@@ -1,21 +1,19 @@
 import css from './styles.module.scss';
-import { ReactComponent as BackSvg } from '../../assets/icons/back-icon.svg';
-import { Info } from 'components/Infomartion';
+import { Info } from 'components/Information';
+import { Header } from 'components/Header';
 
 export default function InformationView() {
   return (
-    <section>
-      <div className={css.header}>
-        <p className={css.iconHeader}>{<BackSvg />}</p>
-        <p className={css.title}>{'Empresa'}</p>
-      </div>
-      <p className={css.menuText}>{'Início > Baterias > Empresa'}</p>
+    <section className={css.informationViewWrapper}>
+      <Header
+        name="Empresa"
+        routeArrayPos={['Início', 'Baterias', 'Empresa']}
+        navigateTo="/teste"
+      />
+
+      <div className={css.logo}></div>
+
       <div className={css.infoEstab}>
-        <img
-          className={css.logoImg}
-          src={`https://www.esfera.com.vc/ccstore/v1/images/?source=/file/v3848543048111582327/products/img_partner_discount_natura.jpg&height=475&width=475`}
-        />
-        <section className={css.line} />
         <Info
           title={'Informações sobre o estabelecimento: '}
           firstSubTitle={'Nome: '}
@@ -25,7 +23,9 @@ export default function InformationView() {
           thirdSubTitle={'Horário de funcionamento: '}
           thirdInfo={'Segunda a sexta, das 8h até às 17h.'}
         />
+
         <section className={css.line} />
+
         <Info
           title={'Endereço do estabelecimento:'}
           firstSubTitle={'CEP: '}
@@ -35,7 +35,9 @@ export default function InformationView() {
           thirdSubTitle={'Rua, Nº, Bairro: '}
           thirdInfo={'Nome da rua, Nº, Nome do bairro'}
         />
+
         <section className={css.line} />
+
         <Info
           title={'Sobre o estabelecimento:'}
           firstSubTitle={'Tipos de materiais aceitos: '}

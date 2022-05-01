@@ -1,4 +1,25 @@
 
+@import "../../assets/styles/variables";
+
+.informationViewWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media(min-width: $tablet) {
+    min-width: 460px;
+    max-width: 500px;
+  }
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 4px 16px rgba(13, 38, 1, 0.13);
+  border-radius: 12px;
+  align-self: center;
+  margin-bottom: 25px;
+}
+
 .iconHeader {
  font-size: 2em;
  color: #000000;
@@ -30,19 +51,13 @@
 .infoEstab{
  display: flex;
  flex-direction: column;
- justify-content: center;
- align-items: center;
-}
-.line{
- height: 0.5px;
- width: 100%;
- background-color: black;
 }
 
-.logoImg{
- max-width: 200px;
- width: 70%;
- height: 200px;
+.line{
+ height: 0.5px;
+ margin: 5px 0 20px;
+ width: 100%;
+ background-color: $color-60-green;
 }
 
 
