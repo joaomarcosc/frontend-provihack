@@ -8,6 +8,7 @@ const HelpPage = React.lazy(() => import('../containers/HelpPage'));
 const InformationView = React.lazy(
   () => import('../containers/InformationView')
 );
+const SuportForm = React.lazy(() => import('../containers/SuportForm'));
 const AboutUs = React.lazy(() => import('../containers/AboutUs'));
 
 export function Routes() {
@@ -19,6 +20,7 @@ export function Routes() {
           <Route path="tipos-de-materiais" element={<RecycleTypes />} />
           <Route path="submeter-sugestao" element={<SuggestionForm />} />
           <Route path="informacao" element={<InformationView />} />
+          <Route path="suporte" element={<SuportForm />} />
           <Route path="sobre-nos" element={<AboutUs />} />
         </Route>
         <Route path="/help">
