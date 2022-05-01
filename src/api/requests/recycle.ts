@@ -19,7 +19,7 @@ export async function getCompanyByName(name: string) {
 
 export async function postFormSuggestion(params: IPostSuggestionParams) {
   const res = await api.post<IPostSuggestionParams, string>(
-    '/suggestion',
+    '/sugestion',
     params
   );
 
