@@ -1,22 +1,27 @@
-import { useStores } from 'stores';
-import { Modal } from 'components/Modal';
-import { useState } from 'react';
+import css from './styles.module.scss';
+import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
+import { useNavigate } from 'react-router-dom';
 
-export function Header() {
-  const [open, setOpen] = useState(false);
-  const {
-    counterStore: { increment, count, decrement }
-  } = useStores();
+interface IProps {
+  name: string;
+  navigateTo: string;
+  routeArrayPos: string[];
+}
 
+export function Header({ name, navigateTo, routeArrayPos }: IProps) {
+  const navigate = useNavigate();
   return (
-    <section>
-      <h1>Boilerplate</h1>
-      <button onClick={decrement}>Decrementar</button>
-      {count}
-      <button onClick={increment}>Incrementar</button>
-      <Modal open={open} setOpen={setOpen}>
-        <p>opa</p>
-      </Modal>
+    <section className={css.headerWrapper}>
+      <section className={css.headerMain}>
+        <button
+          className={css.headerButtonBack}
+          onClick={() => navigate(navigateTo)}
+        >
+          <ArrowSvg />
+          <p>{name}</p>
+        </button>
+      </section>
+      <p className={css.routePositions}>{routeArrayPos.join(' > ')}</p>
     </section>
   );
 }
