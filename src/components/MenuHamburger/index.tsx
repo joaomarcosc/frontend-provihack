@@ -2,17 +2,20 @@ import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
 import cln from 'classnames';
 import css from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface IProps {
   options: Array<{
     icon: ReactNode;
     title: string;
+    navigateTo: string;
   }>;
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export function MenuHamburger({ options, open, setOpen }: IProps) {
+  const navigate = useNavigate();
   return (
     <section className={css.menuHamburgerWrapper}>
       <button className={css.menuHamburgerIcon} onClick={() => setOpen(true)}>
@@ -33,7 +36,7 @@ export function MenuHamburger({ options, open, setOpen }: IProps) {
 
           <section className={css.navbar}>
             {options?.map((item, index) => (
-              <p key={index}>
+              <p onClick={() => navigate(item.navigateTo)} key={index}>
                 {item.icon} {item.title}
               </p>
             ))}

@@ -8,7 +8,11 @@ export default function HelpPage() {
 
   return (
     <section className={css.helpViewWrapper}>
-      <Header name="Ajuda" routeArrayPos={['Início', 'Ajuda']} navigateTo="/" />
+      <Header
+        name="Ajuda"
+        routeArrayPos={['Início', 'Ajuda']}
+        navigateTo="/tipos-de-materiais"
+      />
       <HelpTopics
         onClickSugest={() => navigate('submeter-sugestao')}
         onClickSuport={() => navigate('form')}
