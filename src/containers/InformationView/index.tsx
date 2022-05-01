@@ -1,8 +1,11 @@
 import css from './styles.module.scss';
 import { Info } from 'components/Information';
 import { Header } from 'components/Header';
+import { useCompanyById } from 'hooks/useRecycle';
 
 export default function InformationView() {
+  const { data } = useCompanyById('10339c2a-f49d-4836-bb5a-1889a2b9bbee');
+  console.log(data);
   return (
     <section className={css.informationViewWrapper}>
       <Header
