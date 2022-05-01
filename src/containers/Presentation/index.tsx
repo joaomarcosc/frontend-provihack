@@ -57,10 +57,6 @@ export default function Presentation() {
           </section>
         </section>
       )}
-
-      <Modal open={open} setOpen={setOpen}>
-        <p>opa</p>
-      </Modal>
     </section>
   );
 }
