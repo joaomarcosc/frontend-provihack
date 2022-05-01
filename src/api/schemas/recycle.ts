@@ -21,6 +21,10 @@ export interface IGetEstablishment {
   howDoesDiscart: string;
 }
 
+export interface IGetEstablishmentResponse {
+  data: IGetEstablishment;
+}
+
 export interface IGetDiscard {
   nameEstablishment: string;
   tel: string;
