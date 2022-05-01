@@ -14,8 +14,8 @@ export default function HelpPage() {
         navigateTo="/tipos-de-materiais"
       />
       <HelpTopics
-        onClickSugest={() => navigate('submeter-sugestao')}
-        onClickSuport={() => navigate('form')}
+        onClickSugest={() => navigate('/submeter-sugestao')}
+        onClickSuport={() => navigate('/suporte')}
       />
     </section>
   );
