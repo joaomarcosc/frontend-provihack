@@ -1,25 +1,25 @@
 import css from './styles.module.scss';
-import { ReactComponent as EnterSvg } from '../../assets/icons/topic-arrow.svg';
+import { ReactComponent as EnterSvg } from '../../assets/icons/arrow.svg';
 
-export function HelpTopics() {
+interface Iprops {
+  onClickSugest?: () => void;
+  onClickSuport?: () => void;
+}
+
+export function HelpTopics(props: Iprops) {
   return (
-    <div className={css.infoContainer}>
+    <section className={css.infoContainer}>
       <p className={css.title}>Principais tópicos:</p>
-      <div className={css.topicContainer}>
-        <p className={css.text}>
-          Não encontrei nenhum estabelecimento na minha cidade, e agora?
-        </p>
+
+      <div onClick={props.onClickSugest} className={css.topicContainer}>
+        <p className={css.text}>Formulário para sugestão de estabelecimento.</p>
         <p className={css.iconEnter}>{<EnterSvg />}</p>
       </div>
 
-      <div className={css.topicContainer}>
-        <p className={css.text}>Como sugerir um estabelecimento?</p>
-        <p className={css.iconEnter}>{<EnterSvg />}</p>
-      </div>
-      <div className={css.topicContainer}>
+      <div onClick={props.onClickSuport} className={css.topicContainer}>
         <p className={css.text}>Como entrar em contato com o suporte?</p>
         <p className={css.iconEnter}>{<EnterSvg />}</p>
       </div>
-    </div>
+    </section>
   );
 }

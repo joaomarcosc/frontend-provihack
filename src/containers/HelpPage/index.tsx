@@ -1,16 +1,18 @@
+import { Header } from 'components/Header';
+import { HelpTopics } from 'components/HelpTopics';
+import { useNavigate } from 'react-router-dom';
 import css from './styles.module.scss';
-import { ReactComponent as BackSvg } from '../../assets/icons/back-icon.svg';
-import { HelpFind } from 'components/HelpFind';
 
 export default function HelpPage() {
+  const navigate = useNavigate();
+
   return (
-    <section>
-      <div className={css.header}>
-        <p className={css.iconHeader}>{<BackSvg />}</p>
-        <p className={css.title}>{'Ajuda'}</p>
-      </div>
-      <p className={css.menuText}>{'Início > Ajuda'}</p>
-      <HelpFind />
+    <section className={css.helpViewWrapper}>
+      <Header name="Ajuda" routeArrayPos={['Início', 'Ajuda']} navigateTo="/" />
+      <HelpTopics
+        onClickSugest={() => navigate('submeter-sugestao')}
+        onClickSuport={() => navigate('form')}
+      />
     </section>
   );
 }

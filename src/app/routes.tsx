@@ -20,11 +20,9 @@ export function Routes() {
           <Route path="tipos-de-materiais" element={<RecycleTypes />} />
           <Route path="submeter-sugestao" element={<SuggestionForm />} />
           <Route path="informacao" element={<InformationView />} />
+          <Route path="ajuda" element={<HelpPage />} />
           <Route path="suporte" element={<SuportForm />} />
           <Route path="sobre-nos" element={<AboutUs />} />
-        </Route>
-        <Route path="/help">
-          <Route index element={<HelpPage />} />
         </Route>
       </RouteContainer>
     </React.Suspense>
