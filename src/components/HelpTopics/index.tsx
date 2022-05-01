@@ -1,9 +1,9 @@
 import css from './styles.module.scss';
-import { ReactComponent as EnterSvg } from '../../assets/icons/topic-arrow.svg';
+import { ReactComponent as EnterSvg } from '../../assets/icons/arrow.svg';
 
 export function HelpTopics() {
   return (
-    <div className={css.infoContainer}>
+    <section className={css.infoContainer}>
       <p className={css.title}>Principais tópicos:</p>
       <div className={css.topicContainer}>
         <p className={css.text}>
@@ -20,6 +20,6 @@ export function HelpTopics() {
         <p className={css.text}>Como entrar em contato com o suporte?</p>
         <p className={css.iconEnter}>{<EnterSvg />}</p>
       </div>
-    </div>
+    </section>
   );
 }

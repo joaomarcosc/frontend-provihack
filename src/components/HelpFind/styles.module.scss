@@ -1,23 +1,26 @@
-.infoContainer{
+@import "../../assets/styles/variables";
+
+.containerFind{
  display: flex;
  flex-direction: column;
- margin: 0 7% 0 7%;
- padding-top: 5%;
+ margin: 0 10px 0 10px;
 }
 
 .title{
- color: #000000;
- font-weight: bold;
+ color: $color-dark-green;
+ font-weight: 700;
+ padding-bottom: 10px;
 }
 
 .iconEnter{
- color: #000000;
+ color: $color-dark;
 }
 
 .text{
  color:#696969;
  text-align: justify;
- margin:5% 0 5% 0 ;
+ padding-bottom: 30px;
+ font-weight: 500;
 }
 
 .link{

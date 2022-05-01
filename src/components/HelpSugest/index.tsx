@@ -4,7 +4,7 @@ interface Iprops {
 }
 export function HelpSugest(props: Iprops) {
   return (
-    <div className={css.infoContainer}>
+    <section className={css.infoContainer}>
       <p className={css.title}>
         Não encontrei nenhum estabelecimento na minha cidade, e agora?
       </p>
@@ -16,6 +16,6 @@ export function HelpSugest(props: Iprops) {
           {'aqui.'}
         </span>
       </p>
-    </div>
+    </section>
   );
 }

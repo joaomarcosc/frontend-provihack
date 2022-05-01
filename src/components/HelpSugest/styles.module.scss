@@ -1,27 +1,24 @@
+@import "../../assets/styles/variables";
+
 .infoContainer{
  display: flex;
  flex-direction: column;
- margin: 0 7% 0 7%;
+ margin: 0 10px 0 10px;
 }
 
 .title{
- color: #000000;
- font-weight: bold;
- padding-top:5%;
-}
-
-.iconEnter{
- color: #000000;
+ color: $color-dark-green;
+ font-weight: 700;
+ padding-bottom: 20px;
 }
 
 .text{
- color:#696969;
+ color:$color-70-green;
  text-align: justify;
- padding-top: 5%;
 }
 
 .link{
  font-weight: bold;
- color:#000000;
+ color:$color-dark;
  text-decoration: underline;
 }
