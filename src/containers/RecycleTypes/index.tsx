@@ -17,8 +17,8 @@ export default function RecycleTypes() {
   const [value, setValue] = useState('');
 
   const optionsMenuBar = [
-    { icon: <InfoIcon />, title: 'Sobre nós' },
-    { icon: <FloaterIcon />, title: 'Preciso de ajuda' }
+    { icon: <InfoIcon />, title: 'Sobre nós', navigateTo: '/sobre-nos' },
+    { icon: <FloaterIcon />, title: 'Preciso de ajuda', navigateTo: '/ajuda' }
   ];
   useEffect(() => {
     const newValue = recycle.filter((item) =>
