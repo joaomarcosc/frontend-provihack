@@ -1,0 +1,47 @@
+@import "../../assets/styles/variables";
+
+.suportFormWrapper {
+    position: relative;
+    height: 100vh;
+
+    @media(min-width: $tablet) {
+      min-width: 460px;
+      max-width: 500px;
+    }
+}
+
+.suportForm {
+  padding: 0 20px;
+  font-weight: 500;
+
+  &>h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+}
+
+.title{
+ color: $color-dark-green;
+ font-weight: 500;
+ padding-bottom: 10px;
+}
+
+.answer{
+ color: $color-60-green;
+ padding-bottom: 40px;
+}
+
+.ask{
+ color: $color-dark-green;
+}
+
+.input{
+ padding-bottom: 20px;
+}
+
+.lastInput{
+ padding-bottom: 30px;
+}
