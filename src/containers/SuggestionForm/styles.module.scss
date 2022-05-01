@@ -1,0 +1,52 @@
+@import "../../assets/styles/variables";
+
+.suggestionFormWrapper {
+    position: relative;
+    height: 100vh;
+
+    @media(min-width: $tablet) {
+      min-width: 460px;
+      max-width: 500px;
+    }
+}
+
+.suggestionForm {
+  padding: 0 20px;
+  font-weight: 500;
+
+  &>h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+}
+
+.cityAndUf {
+  display: flex;
+}
+
+.cityInput {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.ufInput {
+  width: 74px;
+}
+
+.companySectionStep, .formResponsibleStep {
+  &>p {
+    color: $color-dark-green;
+    margin-bottom: 10px;
+  }
+
+  &>section {
+    margin-bottom: 20px;
+  }
+}
+
+.formResponsibleStep {
+  margin-top: 40px;
+}
