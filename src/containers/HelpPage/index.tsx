@@ -1,7 +1,5 @@
 import css from './styles.module.scss';
 import { ReactComponent as BackSvg } from '../../assets/icons/back-icon.svg';
-import { HelpTopics } from 'components/HelpTopics';
-import { HelpSugest } from 'components/HelpSugest';
 import { HelpFind } from 'components/HelpFind';
 
 export default function HelpPage() {
