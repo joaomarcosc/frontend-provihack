@@ -1,7 +1,7 @@
 import { Button } from 'components/Button';
 import css from './styles.module.scss';
 interface Iprops {
-  onClick: () => void;
+  onClick?: () => void;
 }
 export function HelpFind(props: Iprops) {
   return (

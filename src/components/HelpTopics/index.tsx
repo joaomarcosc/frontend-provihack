@@ -11,6 +11,7 @@ export function HelpTopics() {
         </p>
         <p className={css.iconEnter}>{<EnterSvg />}</p>
       </div>
+
       <div className={css.topicContainer}>
         <p className={css.text}>Como sugerir um estabelecimento?</p>
         <p className={css.iconEnter}>{<EnterSvg />}</p>

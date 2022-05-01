@@ -1,4 +1,4 @@
-@import "../../assets//styles/variables";
+@import "../../assets/styles/variables";
 
 .apresentationWrapper {
   position: relative;
@@ -9,10 +9,6 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-
-  @media(min-width: $tablet) {
-    max-width: 500px;
-  }
 }
 
 .topRight, .leftCenter, .topBottom {

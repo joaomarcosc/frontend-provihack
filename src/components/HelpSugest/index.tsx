@@ -1,6 +1,6 @@
 import css from './styles.module.scss';
 interface Iprops {
-  onClick: () => void;
+  onClick?: () => void;
 }
 export function HelpSugest(props: Iprops) {
   return (
