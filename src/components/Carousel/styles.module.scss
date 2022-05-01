@@ -19,8 +19,8 @@
   margin-top: 30px;
 
   &>button {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     border: none;
     background: rgba(13, 38, 1, 0.6);;
@@ -32,6 +32,8 @@
 
   &>.active {
     background: $color-white;
+    width: 16px;
+    height: 16px;
   }
 }
 

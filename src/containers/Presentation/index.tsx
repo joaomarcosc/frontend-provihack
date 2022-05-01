@@ -1,16 +1,18 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as RecycleSvg } from 'assets/icons/recycle-icon.svg';
 import { ReactComponent as EarthSvg } from 'assets/icons/earth-icon.svg';
 import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
-import css from './styles.module.scss';
-import cln from 'classnames';
 import { Carousel } from 'components/Carousel';
 import { carouselListInfo } from './carouseListInfo';
 import { Modal } from 'components/Modal';
+import css from './styles.module.scss';
+import cln from 'classnames';
 
 export default function Presentation() {
   const [step, setStep] = useState<number>(1);
   const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
 
   return (
     <section
@@ -46,7 +48,12 @@ export default function Presentation() {
           </button>
           <Carousel slides={carouselListInfo} delay={4000} />
           <section>
-            <button className={css.button}>Pular introdução</button>
+            <button
+              className={css.button}
+              onClick={() => navigate('tipos-de-materiais')}
+            >
+              Pular introdução
+            </button>
           </section>
         </section>
       )}
