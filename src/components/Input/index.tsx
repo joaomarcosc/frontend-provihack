@@ -12,32 +12,17 @@ export interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
   position?: 'left' | 'right';
   inputSize?: 'small' | 'medium' | 'large';
-  fullwidth?: boolean;
+  fullwidth?: 'true' | 'false';
   label?: string;
   dropdownItems?: IDropdown[];
 }
 
 const Input = forwardRef<HTMLInputElement, IProps>((props: IProps, ref) => {
-  const {
-    placeholder,
-    type,
-    name,
-    label,
-    className,
-    inputSize,
-    icon,
-    fullwidth,
-    onClick,
-    onChange,
-    value,
-    required,
-    readOnly,
-    disabled
-  } = props;
+  const { name, label, className, inputSize, icon, fullwidth } = props;
 
   const classNamesList = [
     style.input,
-    { [style.fullWidth]: fullwidth },
+    { [style.fullWidth]: Boolean(fullwidth) },
     className
   ];
 
@@ -49,17 +34,9 @@ const Input = forwardRef<HTMLInputElement, IProps>((props: IProps, ref) => {
       <div className={cln({ [style.icon]: icon })}>
         <div>{icon}</div>
         <input
-          id={name}
-          value={value}
-          placeholder={placeholder}
-          type={type}
-          ref={ref}
-          onClick={onClick}
-          onChange={onChange}
+          {...props}
           className={cln(style[inputSize ?? 'medium'])}
-          required={required}
-          readOnly={readOnly}
-          disabled={disabled}
+          ref={ref}
         />
       </div>
     </section>
