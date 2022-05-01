@@ -39,10 +39,7 @@ export async function postFormSuggestion(params: IPostSuggestionParams) {
 }
 
 export async function postFormSupport(params: IPostFormSupportParams) {
-  const res = await api.post<IPostFormSupportParams, string>(
-    '/support',
-    params
-  );
+  const res = await api.post<IPostFormSupportParams, string>('/suport', params);
 
   return res;
 }
