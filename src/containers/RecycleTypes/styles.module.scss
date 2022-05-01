@@ -5,6 +5,7 @@
   height: 100vh;
 
   @media(min-width: $tablet) {
+    min-width: 460px;
     max-width: 500px;
   }
 }

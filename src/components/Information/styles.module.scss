@@ -1,0 +1,22 @@
+@import "../../assets/styles/variables";
+
+.infoContainer{
+ display: flex;
+ flex-direction: column;
+ margin: 0 10px 0 10px;
+}
+
+.infoTitle{
+ color: $default-green;
+ font-weight: 700;
+ margin-bottom: 15px;
+}
+
+.infoHighlight{
+ font-weight: 600;
+}
+
+.sectionInfo {
+  color: $color-70-green;
+  margin-bottom: 15px;
+}
