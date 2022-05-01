@@ -1,0 +1,27 @@
+.infoContainer{
+ display: flex;
+ flex-direction: column;
+ margin: 0 7% 0 7%;
+ padding-top: 5%;
+}
+
+.title{
+ color: #000000;
+ font-weight: bold;
+}
+
+.iconEnter{
+ color: #000000;
+}
+
+.text{
+ color:#696969;
+ text-align: justify;
+ margin:5% 0 5% 0 ;
+}
+
+.link{
+ font-weight: bold;
+ color:#000000;
+ text-decoration: underline;
+}
