@@ -31,7 +31,7 @@ export default function Presentation() {
           <section className={css.stepOneInfo}>
             <RecycleSvg />
             <h3 className={css.presentationTitle}>Eu Reciclo</h3>
-            <p className={css.presentationDescription}>Não existe plano B</p>
+            <p className={css.presentationDescription}>Não existe planeta B!</p>
           </section>
 
           <section>
