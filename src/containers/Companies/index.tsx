@@ -2,7 +2,7 @@ import { Button } from 'components/Button';
 import { Header } from 'components/Header';
 import Input from 'components/Input';
 import { Modal } from 'components/Modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import css from './style.module.scss';
 import { ReactComponent as LocationIcon } from 'assets/icons/location-icon.svg';
 import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
@@ -35,6 +35,10 @@ export default function SearchLocation() {
     setCurrentLocations(newData);
     setOpen(false);
   }
+
+  useEffect(() => {
+    setCurrentLocations(data?.data);
+  }, [data?.data]);
 
   return (
     <section className={css.searchLocationWrapper}>
@@ -73,6 +77,7 @@ export default function SearchLocation() {
               size="small"
               theme="secondary"
               onClick={() => setOpen(false)}
+              type="button"
             >
               Cancelar
             </Button>
