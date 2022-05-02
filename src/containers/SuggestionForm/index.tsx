@@ -20,16 +20,21 @@ export interface IFormFields {
 export default function SuggestionForm() {
   const [open, setOpen] = useState(false);
   const mutate = useFormSuggestion();
-  const { register, handleSubmit, reset } = useForm<IFormFields>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isValid }
+  } = useForm<IFormFields>();
 
   function onSubmit(data: IFormFields) {
     mutate.mutate(data);
 
     if (mutate.isSuccess) {
       setOpen(true);
-      console.log('op');
     }
   }
+  console.log(isValid);
 
   function onCloseModal() {
     reset();
@@ -41,7 +46,6 @@ export default function SuggestionForm() {
       <Modal open={open} setOpen={setOpen}>
         <div className={css.suggestionModal}>
           <h3>Enviado com sucesso!</h3>
-          <p>Vamos analisar as informações e entraremos em contato com você!</p>
           <Button
             onClick={onCloseModal}
             theme="secondary"
@@ -55,11 +59,17 @@ export default function SuggestionForm() {
       <Header
         navigateTo="/ajuda"
         name="Formulário"
-        routeArrayPos={['Inicio', 'Ajuda', 'Como suger...', 'Fomulário']}
+        routeArrayPos={['Inicio', 'Ajuda', 'Fomulário']}
       />
 
+      <h3>Formulário de sugestão</h3>
+      <p className={css.textHelp}>
+        Preencha o formulário abaixo para sugerir uma empresa que aceite
+        recicláveis:
+      </p>
+
+      <section className={css.line} />
       <form className={css.suggestionForm} onSubmit={handleSubmit(onSubmit)}>
-        <h3>Formulário de sugestão</h3>
         <section className={css.companySectionStep}>
           <p>Informações do estabelecimento:</p>
 
@@ -98,11 +108,11 @@ export default function SuggestionForm() {
               placeholder="Ex: CE"
               className={css.ufInput}
               fullwidth="true"
-              {...register('state', { required: true, maxLength: 2 })}
+              maxLength={2}
+              {...register('state', { required: true })}
             />
           </section>
         </section>
-
         <section className={css.formResponsibleStep}>
           <p>Informação do responsável</p>
           <Input

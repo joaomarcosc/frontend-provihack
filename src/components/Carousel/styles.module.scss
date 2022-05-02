@@ -42,3 +42,14 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.arrowLeft, .arrowRight {
+  font-size: 25px;
+  color: $color-white;
+}
+
+.arrowLeft {
+  margin-right: 9px;
+  transform: rotate(180deg);
+}

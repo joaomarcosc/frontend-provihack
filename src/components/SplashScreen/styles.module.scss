@@ -1,0 +1,15 @@
+@import "../../assets/styles/variables";
+
+.splashScreen {
+  width: 100vw;
+  height: 100vh;
+  background-color: $default-green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &>svg {
+    color: $color-white;
+    font-size: 150px;
+  }
+}

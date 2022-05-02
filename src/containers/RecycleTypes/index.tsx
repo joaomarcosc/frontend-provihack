@@ -18,8 +18,8 @@ export default function RecycleTypes() {
   const navigate = useNavigate();
 
   const optionsMenuBar = [
-    { icon: <InfoIcon />, title: 'Sobre nós' },
-    { icon: <FloaterIcon />, title: 'Preciso de ajuda' }
+    { icon: <InfoIcon />, title: 'Sobre nós', navigateTo: '/sobre-nos' },
+    { icon: <FloaterIcon />, title: 'Preciso de ajuda', navigateTo: '/ajuda' }
   ];
   useEffect(() => {
     const newValue = recycle.filter((item) =>
@@ -63,11 +63,7 @@ export default function RecycleTypes() {
               icon={item.icon}
               title={item.title}
               description={item.description}
-              onClick={() =>
-                navigate(`/${removeSpecialCharAndLowerCase(item.title)}`, {
-                  state: item.title
-                })
-              }
+              onClick={() => navigate(`/${item.title}`)}
             />
           ))}
         </div>

@@ -1,0 +1,32 @@
+
+@import "../../assets/styles/variables";
+
+.AboutUsWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media(min-width: $tablet) {
+    min-width: 460px;
+    max-width: 500px;
+  }
+}
+
+.AboutContainer{
+ display: flex;
+ flex-direction: column;
+ padding: 0 20px 0 20px;
+}
+
+.title{
+ color: $color-dark-green;
+ font-weight: 500;
+ padding-bottom: 20px;
+}
+
+.text{
+ color: $color-70-green;
+ font-weight: 400;
+ text-align: left;
+}
+
+

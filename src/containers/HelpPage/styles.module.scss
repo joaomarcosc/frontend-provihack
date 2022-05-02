@@ -1,0 +1,12 @@
+@import "../../assets/styles/variables";
+
+.helpViewWrapper {
+ display: flex;
+ flex-direction: column;
+
+ @media(min-width: $tablet) {
+   min-width: 460px;
+   max-width: 500px;
+ }
+}
+

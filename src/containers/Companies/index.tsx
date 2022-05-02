@@ -6,28 +6,47 @@ import { useState } from 'react';
 import css from './style.module.scss';
 import { ReactComponent as LocationIcon } from 'assets/icons/location-icon.svg';
 import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
-import { useLocation } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useCompanyByName } from 'hooks/useRecycle';
-import { removeSpecialCharAndLowerCase } from 'helper/utils';
+import { CompanyCard } from './CompanyCard';
+import { useForm } from 'react-hook-form';
+import { IRecycle } from 'api/schemas/recycle';
+
+interface IFormFields {
+  uf: string;
+  city: string;
+}
 
 export default function SearchLocation() {
+  const navigate = useNavigate();
+  const { name } = useParams();
   const [open, setOpen] = useState<boolean>(true);
-  const { state } = useLocation();
-  const { data } = useCompanyByName(
-    removeSpecialCharAndLowerCase((state as string) ?? '')
-  );
+  const { data } = useCompanyByName(name ?? '');
+  const { register, handleSubmit } = useForm<IFormFields>();
+  const [currentLocations, setCurrentLocations] = useState<
+    IRecycle[] | undefined
+  >(data?.data);
+
+  function onSubmit(dataForm: IFormFields) {
+    const newData = data?.data.filter(
+      (item) => item.state === dataForm.uf || item.city === dataForm.city
+    );
+
+    setCurrentLocations(newData);
+    setOpen(false);
+  }
 
   return (
     <section className={css.searchLocationWrapper}>
       <Header
-        name={state as string}
-        routeArrayPos={['Início', state as string]}
+        name={name ?? ''}
+        routeArrayPos={['Início', name ?? '']}
         navigateTo="/tipos-de-materiais"
       />
       <Modal open={open} setOpen={setOpen}>
-        <div className={css.companyModal}>
+        <form className={css.companyModal} onSubmit={handleSubmit(onSubmit)}>
           <h3>
-            Forneça um estado e uma cidade, para indicarmos locais mais
+            Forneça um estado e/ou uma cidade, para indicarmos locais mais
             próximos:
           </h3>
 
@@ -38,6 +57,7 @@ export default function SearchLocation() {
             label="UF:"
             className={css.input}
             placeholder="Ex: CE"
+            {...register('uf')}
           />
 
           <Input
@@ -45,6 +65,7 @@ export default function SearchLocation() {
             label="Cidade:"
             className={css.input}
             placeholder="Ex: Fortaleza"
+            {...register('city')}
           />
 
           <section className={css.modalButtons}>
@@ -57,20 +78,38 @@ export default function SearchLocation() {
             </Button>
             <Button size="small">Salvar</Button>
           </section>
-        </div>
+        </form>
       </Modal>
 
-      <button className={css.filterButton}>
-        <p>
-          <LocationIcon className={css.firstIcon} />
-          <span>Localização: Cidade, Estado</span>
-        </p>
-        <ArrowSvg className={css.secondIcon} />
-      </button>
+      <section className={css.section}>
+        <button className={css.filterButton} onClick={() => setOpen(true)}>
+          <p>
+            <LocationIcon className={css.firstIcon} />
+            <span>Localização: Cidade, Estado</span>
+          </p>
+          <ArrowSvg className={css.secondIcon} />
+        </button>
+      </section>
 
       <section className={css.line} />
 
-      <p>Estabelecimentos na sua cidade que aceitam baterias:</p>
+      <section className={css.section}>
+        <p className={css.sectionTitle}>
+          Estabelecimentos próximos à localização selecionada:
+        </p>
+
+        <section className={css.cards}>
+          {currentLocations?.map((item) => (
+            <CompanyCard
+              key={`${item.id}-card-screen`}
+              company={item.name}
+              city={item.city}
+              state={item.state}
+              onClick={() => navigate(`/informacao?id=${item.id}&name=${name}`)}
+            />
+          ))}
+        </section>
+      </section>
     </section>
   );
 }

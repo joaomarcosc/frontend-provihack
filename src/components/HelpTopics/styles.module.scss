@@ -1,0 +1,27 @@
+@import "../../assets/styles/variables";
+
+.infoContainer{
+ display: flex;
+ flex-direction: column;
+ margin: 0 10px 0 10px;
+}
+
+.title{
+ font-weight: 700;
+ color: $color-dark-green;
+ padding-bottom: 15px;
+}
+
+.topicContainer{
+ display: flex;
+ justify-content: space-between;
+ padding-bottom: 15px;
+}
+
+.text{
+ color: $color-dark-green;
+}
+
+.iconEnter{
+ color: $color-dark-green;
+}
