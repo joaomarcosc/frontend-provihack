@@ -3,16 +3,20 @@ import { Info } from 'components/Information';
 import { Header } from 'components/Header';
 import { useCompanyById } from 'hooks/useRecycle';
 import { ReactComponent as RecycleSvg } from 'assets/icons/recycle-icon.svg';
+import { useSearchParams } from 'react-router-dom';
 
 export default function InformationView() {
-  const { data } = useCompanyById('10339c2a-f49d-4836-bb5a-1889a2b9bbee');
+  const [useSearch] = useSearchParams();
+  const id = useSearch.get('id');
+  const name = useSearch.get('name');
 
+  const { data } = useCompanyById(`${id}`);
   return (
     <section className={css.informationViewWrapper}>
       <Header
-        name="Empresa"
-        routeArrayPos={['Início', 'Baterias', data?.data.name ?? '']}
-        navigateTo="/teste"
+        name={data?.data.name ?? ''}
+        routeArrayPos={['Início', name ?? '', data?.data.name ?? '']}
+        navigateTo={`/${name}`}
       />
 
       <div className={css.logo}>{<RecycleSvg />}</div>

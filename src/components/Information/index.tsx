@@ -24,8 +24,7 @@ export function Info(props: IProps) {
 
       <p className={css.sectionInfo}>
         <span className={css.infoHighlight}>{props.secondSubTitle}</span>
-        {props.secondInfo}
-        {props.infoState}
+        {props.secondInfo}, {props.infoState}
       </p>
 
       <p className={css.sectionInfo}>

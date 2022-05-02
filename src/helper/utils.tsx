@@ -15,7 +15,7 @@ import { ReactComponent as GlassesIcon } from 'assets/icons/glasses.svg';
 export const recycleTypes = [
   {
     icon: <BatteryIcon />,
-    title: 'Bateria',
+    title: 'Baterias',
     description: 'Descarte baterias que não usa mais.'
   },
   {
@@ -80,3 +80,10 @@ export const recycleTypes = [
     description: 'Descarte os vidros que não usa mais.'
   }
 ];
+
+export function removeSpecialCharAndLowerCase(str: string) {
+  return str
+    .toLocaleLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}

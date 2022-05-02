@@ -1,6 +1,8 @@
 import cln from 'classnames';
 import { ICarouselInfoList } from 'containers/Presentation/carouseListInfo';
-import { useEffect, useState } from 'react';
+import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
+import { useStores } from 'stores';
+
 import css from './styles.module.scss';
 
 interface IProps {
@@ -8,20 +10,10 @@ interface IProps {
   delay: number;
 }
 
-export function Carousel({ slides, delay }: IProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    function changeSlide() {
-      const nextIndex = currentIndex + 1;
-
-      setCurrentIndex(nextIndex > slides.length - 1 ? 0 : nextIndex);
-    }
-
-    const timeout = setTimeout(changeSlide, delay);
-
-    return () => clearTimeout(timeout);
-  }, [currentIndex, slides, delay]);
+export function Carousel({ slides }: IProps) {
+  const {
+    counterStore: { currentIndex, setCurrentIndex }
+  } = useStores();
 
   return (
     <section className={css.carouselWrapper}>
@@ -29,6 +21,16 @@ export function Carousel({ slides, delay }: IProps) {
       <p className={css.description}>{slides[currentIndex].description}</p>
 
       <section className={css.bottomBar}>
+        {currentIndex > 0 && (
+          <ArrowSvg
+            className={css.arrowLeft}
+            onClick={() => {
+              if (currentIndex > 0) {
+                setCurrentIndex(currentIndex - 1);
+              }
+            }}
+          />
+        )}
         {slides.map((_, index) => (
           <button
             key={`slide-${index}`}
@@ -37,6 +39,16 @@ export function Carousel({ slides, delay }: IProps) {
             onClick={() => setCurrentIndex(index)}
           ></button>
         ))}
+        {currentIndex < slides.length - 1 && (
+          <ArrowSvg
+            className={css.arrowRight}
+            onClick={() => {
+              if (currentIndex < slides.length - 1) {
+                setCurrentIndex(currentIndex + 1);
+              }
+            }}
+          />
+        )}
       </section>
     </section>
   );

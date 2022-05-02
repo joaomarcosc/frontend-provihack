@@ -5,13 +5,15 @@ import { ReactComponent as EarthSvg } from 'assets/icons/earth-icon.svg';
 import { ReactComponent as ArrowSvg } from 'assets/icons/arrow.svg';
 import { Carousel } from 'components/Carousel';
 import { carouselListInfo } from './carouseListInfo';
-import { Modal } from 'components/Modal';
 import css from './styles.module.scss';
 import cln from 'classnames';
+import { useStores } from 'stores';
 
 export default function Presentation() {
+  const {
+    counterStore: { currentIndex }
+  } = useStores();
   const [step, setStep] = useState<number>(1);
-  const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 
   return (
@@ -26,7 +28,7 @@ export default function Presentation() {
           <EarthSvg className={css.topBottom} />
           <EarthSvg className={css.leftCenter} />
 
-          <section>
+          <section className={css.stepOneInfo}>
             <RecycleSvg />
             <h3 className={css.presentationTitle}>Eu Reciclo</h3>
             <p className={css.presentationDescription}>Não existe plano B</p>
@@ -48,19 +50,24 @@ export default function Presentation() {
           </button>
           <Carousel slides={carouselListInfo} delay={4000} />
           <section>
-            <button
-              className={css.button}
-              onClick={() => navigate('tipos-de-materiais')}
-            >
-              Pular introdução
-            </button>
+            {currentIndex < carouselListInfo.length - 1 ? (
+              <button
+                className={css.button}
+                onClick={() => navigate('tipos-de-materiais')}
+              >
+                Pular introdução
+              </button>
+            ) : (
+              <button
+                className={css.nextPage}
+                onClick={() => navigate('tipos-de-materiais')}
+              >
+                Avançar
+              </button>
+            )}
           </section>
         </section>
       )}
-
-      <Modal open={open} setOpen={setOpen}>
-        <p>opa</p>
-      </Modal>
     </section>
   );
 }

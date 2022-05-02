@@ -1,6 +1,9 @@
 export interface IRecycle {
   id: string;
   name: string;
+  state: string;
+  cep: string;
+  city: string;
 }
 
 export interface IGetRecycleResponse {

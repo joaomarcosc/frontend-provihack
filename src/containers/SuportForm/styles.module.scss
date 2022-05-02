@@ -42,6 +42,50 @@
  padding-bottom: 20px;
 }
 
+.textAreaContent {
+  font-size: 18px;
+  color: $color-70-green;
+
+  &>p {
+    margin-bottom: 4px;
+  }
+}
+
 .lastInput{
- padding-bottom: 30px;
+  box-shadow: 0px 4px 16px rgba(13, 38, 1, 0.13);
+  height: 228px;
+  width: 100%;
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+
+  &::placeholder {
+    color:$color-gray;
+  }
+}
+
+// Modal
+
+.suggestionModal {
+  padding: 30px;
+  max-width: 388px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &>h3 {
+    color: $default-green;
+  }
+
+  &>p {
+    margin: 18px 0 20px;
+    color: $color-70-green;
+  }
+}
+
+.buttonModal {
+  border: 1px solid $default-green;
+  color: $default-green;
 }

@@ -2,8 +2,8 @@ import {
   IPostFormSupportParams,
   IPostSuggestionParams,
   IRecycle,
-  IGetEstablishment,
-  IGetEstablishmentResponse
+  IGetEstablishmentResponse,
+  IGetRecycleResponse
 } from 'api/schemas/recycle';
 import { api } from 'api/service';
 
@@ -22,7 +22,7 @@ export async function getCompanyById(id: string) {
 }
 
 export async function getCompanyByName(name: string) {
-  const res = await api.get<IGetEstablishment>(
+  const res = await api.get<IGetRecycleResponse>(
     `/establishment/discart?name=${name}`
   );
 

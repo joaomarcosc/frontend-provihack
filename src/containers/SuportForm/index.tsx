@@ -24,7 +24,6 @@ export default function SuportForm() {
 
     if (mutate.isSuccess) {
       setOpen(true);
-      console.log('op');
     }
   }
 
@@ -85,13 +84,15 @@ export default function SuportForm() {
           {...register('email', { required: true })}
         />
 
-        <Input
-          className={css.lastInput}
-          label="Mensagem: *"
-          placeholder="Ex: Escreva sua mensagem aqui"
-          fullwidth="true"
-          {...register('message', { required: true })}
-        />
+        <label className={css.textAreaContent}>
+          <p>Mensagem: *</p>
+          <textarea
+            className={css.lastInput}
+            placeholder="Ex: Escreva sua mensagem aqui"
+            {...register('message', { required: true })}
+          />
+        </label>
+
         <Button fullwidth="true">Enviar mensagem</Button>
       </form>
     </section>

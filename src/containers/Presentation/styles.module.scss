@@ -9,6 +9,11 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+
+    @media(min-width: $tablet) {
+      min-width: 460px;
+      max-width: 500px;
+    }
 }
 
 .topRight, .leftCenter, .topBottom {
@@ -65,6 +70,19 @@
   color: $color-white;
   font-weight: 600;
   cursor: pointer;
+}
+
+.nextPage {
+  @extend .button;
+  background-color: $color-light-green;
+  color: $color-dark-green;
+}
+
+.stepOneInfo {
+  &>svg {
+    font-size: 60px;
+    color: $color-white;
+  }
 }
 
 .secondStep {
