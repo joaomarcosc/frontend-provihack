@@ -46,6 +46,7 @@ export default function SuggestionForm() {
       <Modal open={open} setOpen={setOpen}>
         <div className={css.suggestionModal}>
           <h3>Enviado com sucesso!</h3>
+          <p>Vamos analisar as informações e entraremos em contato com você!</p>
           <Button
             onClick={onCloseModal}
             theme="secondary"

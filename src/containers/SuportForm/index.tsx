@@ -36,7 +36,7 @@ export default function SuportForm() {
       <Modal open={open} setOpen={setOpen}>
         <div className={css.suggestionModal}>
           <h3>Enviado com sucesso!</h3>
-          <p>Vamos analisar as informações e entraremos em contato com você!</p>
+          <p>Entraremos em contato com você o mais breve possível!</p>
           <Button
             onClick={onCloseModal}
             theme="secondary"
@@ -93,7 +93,9 @@ export default function SuportForm() {
           />
         </label>
 
-        <Button fullwidth="true">Enviar mensagem</Button>
+        <Button fullwidth="true" className={css.button}>
+          Enviar mensagem
+        </Button>
       </form>
     </section>
   );
